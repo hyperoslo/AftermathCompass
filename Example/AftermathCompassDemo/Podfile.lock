@@ -1,0 +1,16 @@
+PODS:
+  - AftermathCompass (0.1.0)
+
+DEPENDENCIES:
+  - AftermathCompass (from `../../`)
+
+EXTERNAL SOURCES:
+  AftermathCompass:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  AftermathCompass: 9a70068b86d228933e90fe7ffbebf149425151d6
+
+PODFILE CHECKSUM: 9b78385965abfed2f4462749f3b8c26c90be488c
+
+COCOAPODS: 1.0.1
