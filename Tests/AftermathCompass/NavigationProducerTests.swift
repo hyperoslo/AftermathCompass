@@ -2,7 +2,7 @@ import XCTest
 import Compass
 @testable import AftermathCompass
 
-class CompassTests: XCTestCase {
+class NavigationProducerTests: XCTestCase {
 
   var command: NavigationCommand!
 

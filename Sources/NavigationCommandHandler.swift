@@ -9,8 +9,8 @@ public struct NavigationCommandHandler: CommandHandler {
       throw NavigationError.InvalidURLString(command.URLString)
     }
 
-    guard let location = Compass.parse(URL) else {
-      throw NavigationError.URLCouldNotBeParsed(URL)
+    guard let location = Compass.parse(URL, payload: command.payload) else {
+      throw NavigationError.InvalidRoute(URL)
     }
 
     return Event.Success(location)
