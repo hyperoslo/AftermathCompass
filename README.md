@@ -8,12 +8,109 @@
 
 ## Description
 
-**AftermathCompass** description.
+**AftermathCompass** is a message-driven navigation system built on top of
+[Aftermath](https://github.com/hyperoslo/Aftermath) and
+[Compass](https://github.com/hyperoslo/Compass).
 
 ## Usage
 
+Create your first route and error handler:
+
 ```swift
-<API>
+import Compass
+
+struct ProfileRoute: Routable {
+
+  func navigate(to location: Location, from currentController: Controller) throws {
+    guard let id = location.arguments["id"] else {
+      throw RouteError.InvalidArguments(location)
+    }
+
+    let controller = ProfileController(id: id)
+    currentController.navigationController?.pushViewController(controller, animated: true)
+  }
+}
+
+struct ErrorRoute: ErrorRoutable {
+
+  func handle(routeError: ErrorType, from currentController: Controller) {
+    let controller = ErrorController(error: routeError)
+    currentController.navigationController?.pushViewController(controller, animated: true)
+  }
+}
+```
+
+Configure `Compass` scheme, router and `Aftermath` in your `AppDelegate`:
+
+```swift
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+  let router = Router()
+  var navigationProducer: NavigationProducer!
+  lazy var navigationController = UINavigationController(rootViewController: ViewController())
+
+  lazy var window: UIWindow? = {
+    let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    return window
+  }()
+
+  func currentController() -> UIViewController {
+    return navigationController.topViewController!
+  }
+
+  // ...
+
+  func application(application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+      window?.rootViewController = navigationController
+      window?.makeKeyAndVisible()
+
+      // ...
+      configureCompass()
+      configureAftermath()
+      return true
+  }
+
+  func configureCompass() {
+    Compass.scheme = "aftermath"
+    Compass.routes = ["login"]
+
+    router.errorRoute = ErrorRoute()
+    router.routes = [
+      "login": LoginRoute()
+    ]
+  }
+
+  func configureAftermath() {
+    Engine.sharedInstance.use(NavigationCommandHandler())
+
+    navigationProducer = NavigationProducer(
+      router: { self.router },
+      currentController: currentController
+    )
+  }
+
+  // ...
+}
+```
+
+Start your journey:
+
+```swift
+import Aftermath
+import AftermathCompass
+
+class ViewController: UIViewController, CommandProducer  {
+
+  // ...
+
+  func logout() {
+    execute(NavigationCommand(URN: "login"))
+  }
+
+  // ...
+}
 ```
 
 ## Installation
