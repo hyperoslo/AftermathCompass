@@ -1,10 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = "AftermathCompass"
-  s.summary          = "A short description of AftermathCompass."
+  s.summary          = "Message-driven navigation system built on top of Aftermath and Compass."
   s.version          = "0.1.0"
   s.homepage         = "https://github.com/hyperoslo/AftermathCompass"
   s.license          = 'MIT'
-  s.author           = { "Hyper Interaktiv AS" => "ios@hyper.no" }
+  s.author           = {
+    "Hyper Interaktiv AS" => "ios@hyper.no"
+  }
   s.source           = {
     :git => "https://github.com/hyperoslo/AftermathCompass.git",
     :tag => s.version.to_s
@@ -16,12 +18,9 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.2'
 
   s.requires_arc = true
-  s.ios.source_files = 'Sources/{iOS,Shared}/**/*'
-  s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
-  s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
+  s.source_files = 'Sources/**/*'
 
-  # s.ios.frameworks = 'UIKit', 'Foundation'
-  # s.osx.frameworks = 'Cocoa', 'Foundation'
-
-  # s.dependency 'Whisper', '~> 1.0'
+  s.frameworks = 'Foundation'
+  s.dependency 'Aftermath'
+  s.dependency 'Compass'
 end
