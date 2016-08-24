@@ -12,13 +12,13 @@
 		D5361FCA1D6C4DD7003C3EE8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FBA1D6C4D76003C3EE8 /* Tests.swift */; };
 		D5361FCB1D6C4DD8003C3EE8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FBA1D6C4D76003C3EE8 /* Tests.swift */; };
 		D5361FCE1D6C4F8E003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */; };
-		D5361FCF1D6C4F8E003C3EE8 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCD1D6C4F8E003C3EE8 /* Sugar.framework */; };
 		D5361FD61D6C5067003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FD41D6C5067003C3EE8 /* Compass.framework */; };
-		D5361FD71D6C5067003C3EE8 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FD51D6C5067003C3EE8 /* Sugar.framework */; };
 		D5361FD81D6C5080003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */; };
-		D5361FD91D6C5080003C3EE8 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCD1D6C4F8E003C3EE8 /* Sugar.framework */; };
 		D5361FDA1D6C50A4003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FD41D6C5067003C3EE8 /* Compass.framework */; };
-		D5361FDB1D6C50A4003C3EE8 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FD51D6C5067003C3EE8 /* Sugar.framework */; };
+		D5361FDE1D6C59D8003C3EE8 /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
+		D5361FDF1D6C59FD003C3EE8 /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
+		D582BA221D6D00A5000D5F3A /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D582BA211D6D00A5000D5F3A /* Aftermath.framework */; };
+		D582BA231D6D00DD000D5F3A /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
 		D5B2E8AA1C3A780C00C0327D /* AftermathCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* AftermathCompass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* AftermathCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* AftermathCompass.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +53,8 @@
 		D5361FCD1D6C4F8E003C3EE8 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/iOS/Sugar.framework; sourceTree = "<group>"; };
 		D5361FD41D6C5067003C3EE8 /* Compass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Compass.framework; path = Carthage/Build/Mac/Compass.framework; sourceTree = "<group>"; };
 		D5361FD51D6C5067003C3EE8 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
+		D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aftermath.framework; path = Carthage/Build/iOS/Aftermath.framework; sourceTree = "<group>"; };
+		D582BA211D6D00A5000D5F3A /* Aftermath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aftermath.framework; path = Carthage/Build/Mac/Aftermath.framework; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* AftermathCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AftermathCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* AftermathCompass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AftermathCompass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* AftermathCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AftermathCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5361FDE1D6C59D8003C3EE8 /* Aftermath.framework in Frameworks */,
 				D5361FCE1D6C4F8E003C3EE8 /* Compass.framework in Frameworks */,
-				D5361FCF1D6C4F8E003C3EE8 /* Sugar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5361FDF1D6C59FD003C3EE8 /* Aftermath.framework in Frameworks */,
 				D5361FD81D6C5080003C3EE8 /* Compass.framework in Frameworks */,
-				D5361FD91D6C5080003C3EE8 /* Sugar.framework in Frameworks */,
 				D5B2E8AA1C3A780C00C0327D /* AftermathCompass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,8 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D582BA231D6D00DD000D5F3A /* Aftermath.framework in Frameworks */,
 				D5361FD61D6C5067003C3EE8 /* Compass.framework in Frameworks */,
-				D5361FD71D6C5067003C3EE8 /* Sugar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D582BA221D6D00A5000D5F3A /* Aftermath.framework in Frameworks */,
 				D5361FDA1D6C50A4003C3EE8 /* Compass.framework in Frameworks */,
-				D5361FDB1D6C50A4003C3EE8 /* Sugar.framework in Frameworks */,
 				D5C6294A1C3A7FAA007F7B7C /* AftermathCompass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +149,8 @@
 		D5361FDC1D6C50BA003C3EE8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D582BA211D6D00A5000D5F3A /* Aftermath.framework */,
+				D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */,
 				D5361FD41D6C5067003C3EE8 /* Compass.framework */,
 				D5361FD51D6C5067003C3EE8 /* Sugar.framework */,
 				D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */,
@@ -357,8 +361,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Compass.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Aftermath.framework",
 			);
 			name = "Copy frameworks with Carthage";
 			outputPaths = (
@@ -373,8 +377,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Compass.framework",
+				"$(SRCROOT)/Carthage/Build/MacAftermath.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Compass.framework",
 			);
 			name = "Copy frameworks with Carthage";
 			outputPaths = (
@@ -389,8 +393,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Compass.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Aftermath.framework",
 			);
 			name = "Copy frameworks with Carthage";
 			outputPaths = (
@@ -405,8 +409,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Compass.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Aftermath.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Compass.framework",
 			);
 			name = "Copy frameworks with Carthage";
 			outputPaths = (
@@ -644,6 +648,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
@@ -671,6 +676,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
