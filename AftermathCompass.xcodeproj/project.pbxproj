@@ -28,6 +28,8 @@
 		D582BA361D6DB7BB000D5F3A /* NavigationCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA341D6DB7BB000D5F3A /* NavigationCommandHandlerTests.swift */; };
 		D582BA381D6DB7C2000D5F3A /* NavigationProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA371D6DB7C2000D5F3A /* NavigationProducerTests.swift */; };
 		D582BA391D6DB7C2000D5F3A /* NavigationProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA371D6DB7C2000D5F3A /* NavigationProducerTests.swift */; };
+		D582BA3B1D6DBE9D000D5F3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */; };
+		D582BA3C1D6DBE9D000D5F3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* AftermathCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* AftermathCompass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* AftermathCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* AftermathCompass.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,7 @@
 		D582BA311D6DAE93000D5F3A /* NavigationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationError.swift; sourceTree = "<group>"; };
 		D582BA341D6DB7BB000D5F3A /* NavigationCommandHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCommandHandlerTests.swift; sourceTree = "<group>"; };
 		D582BA371D6DB7C2000D5F3A /* NavigationProducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationProducerTests.swift; sourceTree = "<group>"; };
+		D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* AftermathCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AftermathCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* AftermathCompass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AftermathCompass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* AftermathCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AftermathCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +169,7 @@
 				D582BA271D6DAB18000D5F3A /* NavigationCommandTests.swift */,
 				D582BA341D6DB7BB000D5F3A /* NavigationCommandHandlerTests.swift */,
 				D582BA371D6DB7C2000D5F3A /* NavigationProducerTests.swift */,
+				D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */,
 			);
 			path = AftermathCompass;
 			sourceTree = "<group>";
@@ -451,6 +455,7 @@
 				D582BA351D6DB7BB000D5F3A /* NavigationCommandHandlerTests.swift in Sources */,
 				D582BA2C1D6DAB84000D5F3A /* NavigationCommandTests.swift in Sources */,
 				D582BA381D6DB7C2000D5F3A /* NavigationProducerTests.swift in Sources */,
+				D582BA3B1D6DBE9D000D5F3A /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +476,7 @@
 				D582BA361D6DB7BB000D5F3A /* NavigationCommandHandlerTests.swift in Sources */,
 				D582BA2D1D6DAB84000D5F3A /* NavigationCommandTests.swift in Sources */,
 				D582BA391D6DB7C2000D5F3A /* NavigationProducerTests.swift in Sources */,
+				D582BA3C1D6DBE9D000D5F3A /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

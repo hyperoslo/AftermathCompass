@@ -1,14 +1,38 @@
 import XCTest
 import Compass
+import Aftermath
 @testable import AftermathCompass
 
-class NavigationProducerTests: XCTestCase {
+class NavigationProducerTests: XCTestCase, CommandProducer {
 
-  var command: NavigationCommand!
+  var producer: NavigationProducer!
+  var commandHandler: NavigationCommandHandler!
+  var router: Router!
+  var route: TestRoute!
+  var errorRoute: ErrorRoute!
+  var controller: Controller!
 
   override func setUp() {
     super.setUp()
+
     Compass.scheme = "tests"
+    Compass.routes = [
+      "login",
+      "profile"
+    ]
+
+    router = Router()
+    route = TestRoute()
+    errorRoute = ErrorRoute()
+    controller = Controller()
+
+    router.routes["login"] = route
+    router.errorRoute = errorRoute
+
+    producer = NavigationProducer(router: { self.router }, currentController: { self.controller })
+    commandHandler = NavigationCommandHandler()
+
+    Engine.sharedInstance.use(commandHandler)
   }
 
   override func tearDown() {
@@ -18,23 +42,36 @@ class NavigationProducerTests: XCTestCase {
 
   // MARK: - Tests
 
-  func testInitWithURN() {
+  func testSuccessReaction() {
     let URN = "login"
     let payload = "Test"
+    let command = NavigationCommand(URN: URN, payload: payload)
 
-    command = NavigationCommand(URN: URN, payload: payload)
+    execute(command)
 
-    XCTAssertEqual(command.URLString, "\(Compass.scheme)\(URN)")
-    XCTAssertEqual(command.payload as? String, payload)
+    XCTAssertNil(errorRoute.error)
+    XCTAssertEqual(route.location?.path, URN)
+    XCTAssertTrue(route.location?.arguments.isEmpty == true)
+    XCTAssertEqual(route.location?.payload as? String, payload)
   }
 
-  func testInitWithURL() {
-    let URL = NSURL(string: "tests://callback?access_token=ya29")!
-    let payload = "Test"
+  func testNavigationErrorReaction() {
+    let URN = "error"
+    let command = NavigationCommand(URN: URN)
 
-    command = NavigationCommand(URL: URL, payload: payload)
+    execute(command)
 
-    XCTAssertEqual(command.URLString, URL.absoluteString)
-    XCTAssertEqual(command.payload as? String, payload)
+    XCTAssertNil(route.location)
+    XCTAssertTrue(errorRoute.error is NavigationError)
+  }
+
+  func testRouteErrorReaction() {
+    let URN = "profile"
+    let command = NavigationCommand(URN: URN)
+
+    execute(command)
+
+    XCTAssertNil(route.location)
+    XCTAssertTrue(errorRoute.error is RouteError)
   }
 }
