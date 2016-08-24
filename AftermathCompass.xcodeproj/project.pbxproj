@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5361FC41D6C4D76003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FBD1D6C4D76003C3EE8 /* Compass.swift */; };
-		D5361FC91D6C4D8D003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FBD1D6C4D76003C3EE8 /* Compass.swift */; };
-		D5361FCA1D6C4DD7003C3EE8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FBA1D6C4D76003C3EE8 /* Tests.swift */; };
-		D5361FCB1D6C4DD8003C3EE8 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FBA1D6C4D76003C3EE8 /* Tests.swift */; };
 		D5361FCE1D6C4F8E003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */; };
 		D5361FD61D6C5067003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FD41D6C5067003C3EE8 /* Compass.framework */; };
 		D5361FD81D6C5080003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */; };
@@ -19,6 +15,8 @@
 		D5361FDF1D6C59FD003C3EE8 /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
 		D582BA221D6D00A5000D5F3A /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D582BA211D6D00A5000D5F3A /* Aftermath.framework */; };
 		D582BA231D6D00DD000D5F3A /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
+		D582BA251D6DAB11000D5F3A /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA241D6DAB11000D5F3A /* Compass.swift */; };
+		D582BA281D6DAB18000D5F3A /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA271D6DAB18000D5F3A /* Tests.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* AftermathCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* AftermathCompass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* AftermathCompass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* AftermathCompass.framework */; };
 /* End PBXBuildFile section */
@@ -43,8 +41,6 @@
 /* Begin PBXFileReference section */
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
-		D5361FBA1D6C4D76003C3EE8 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		D5361FBD1D6C4D76003C3EE8 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
 		D5361FBF1D6C4D76003C3EE8 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		D5361FC01D6C4D76003C3EE8 /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 		D5361FC11D6C4D76003C3EE8 /* Info-Tests-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-iOS.plist"; sourceTree = "<group>"; };
@@ -55,6 +51,8 @@
 		D5361FD51D6C5067003C3EE8 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
 		D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aftermath.framework; path = Carthage/Build/iOS/Aftermath.framework; sourceTree = "<group>"; };
 		D582BA211D6D00A5000D5F3A /* Aftermath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aftermath.framework; path = Carthage/Build/Mac/Aftermath.framework; sourceTree = "<group>"; };
+		D582BA241D6DAB11000D5F3A /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		D582BA271D6DAB18000D5F3A /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* AftermathCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AftermathCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* AftermathCompass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AftermathCompass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* AftermathCompass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AftermathCompass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,33 +104,17 @@
 		D5361FB81D6C4D76003C3EE8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D5361FB91D6C4D76003C3EE8 /* Aftermath */,
+				D582BA261D6DAB18000D5F3A /* AftermathCompass */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		D5361FB91D6C4D76003C3EE8 /* Aftermath */ = {
-			isa = PBXGroup;
-			children = (
-				D5361FBA1D6C4D76003C3EE8 /* Tests.swift */,
-			);
-			path = Aftermath;
 			sourceTree = "<group>";
 		};
 		D5361FBB1D6C4D76003C3EE8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D5361FBC1D6C4D76003C3EE8 /* AftermathCompass */,
+				D582BA241D6DAB11000D5F3A /* Compass.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		D5361FBC1D6C4D76003C3EE8 /* AftermathCompass */ = {
-			isa = PBXGroup;
-			children = (
-				D5361FBD1D6C4D76003C3EE8 /* Compass.swift */,
-			);
-			path = AftermathCompass;
 			sourceTree = "<group>";
 		};
 		D5361FBE1D6C4D76003C3EE8 /* Project */ = {
@@ -157,6 +139,14 @@
 				D5361FCD1D6C4F8E003C3EE8 /* Sugar.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D582BA261D6DAB18000D5F3A /* AftermathCompass */ = {
+			isa = PBXGroup;
+			children = (
+				D582BA271D6DAB18000D5F3A /* Tests.swift */,
+			);
+			path = AftermathCompass;
 			sourceTree = "<group>";
 		};
 		D5B2E8951C3A780C00C0327D = {
@@ -285,7 +275,7 @@
 		D5B2E8961C3A780C00C0327D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
@@ -426,7 +416,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5361FC41D6C4D76003C3EE8 /* Compass.swift in Sources */,
+				D582BA251D6DAB11000D5F3A /* Compass.swift in Sources */,
+				D582BA281D6DAB18000D5F3A /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +425,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5361FCA1D6C4DD7003C3EE8 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +432,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5361FC91D6C4D8D003C3EE8 /* Compass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +439,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5361FCB1D6C4DD8003C3EE8 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
