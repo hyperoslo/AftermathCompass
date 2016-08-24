@@ -11,19 +11,26 @@ public final class NavigationProducer: ReactionProducer {
   public init(router: () -> Router, currentController: () -> Controller) {
     self.router = router
     self.currentController = currentController
+    configure()
   }
 
   // MARK: - Navigation
 
-  func navigate() {
-    let controller = self.currentController()
-
+  func configure() {
     react(
-      done: { location in
-        self.router().navigate(to: location, from: controller)
+      done: { [weak self] (location: Location) in
+        guard let weakSelf = self else {
+          return
+        }
+
+        weakSelf.router().navigate(to: location, from: weakSelf.currentController())
       },
-      fail: { error in
-        self.router().errorRoute?.handle(error, from: controller)
+      fail: { [weak self] error in
+        guard let weakSelf = self else {
+          return
+        }
+
+        weakSelf.router().errorRoute?.handle(error, from: weakSelf.currentController())
     })
   }
 }
