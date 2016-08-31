@@ -18,6 +18,7 @@ public final class NavigationProducer: ReactionProducer {
 
   func configure() {
     react(
+      to: NavigationCommand.self,
       done: { [weak self] (location: Location) in
         guard let weakSelf = self else {
           return
