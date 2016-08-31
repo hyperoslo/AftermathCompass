@@ -8,7 +8,7 @@ public struct NavigationCommandHandler: CommandHandler {
 
   // MARK: - Command handling
 
-  public func handle(command: NavigationCommand) throws -> Event<Location> {
+  public func handle(command: NavigationCommand) throws -> Event<NavigationCommand> {
     guard let URL = NSURL(string: command.URLString) else {
       throw NavigationError.InvalidURLString(command.URLString)
     }

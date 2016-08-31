@@ -2,11 +2,9 @@ import Foundation
 import Compass
 import Aftermath
 
-extension Location: Projection {}
-
 public struct NavigationCommand: Command {
 
-  public typealias ProjectionType = Location
+  public typealias Output = Location
 
   public let URLString: String
   public let payload: Any?
