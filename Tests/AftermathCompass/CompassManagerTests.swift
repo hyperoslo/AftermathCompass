@@ -5,7 +5,7 @@ import Aftermath
 
 class CompassProducerTests: XCTestCase, CommandProducer {
 
-  var producer: CompassProducer!
+  var manager: CompassManager!
   var commandHandler: CompassCommandHandler!
   var router: Router!
   var route: TestRoute!
@@ -36,7 +36,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
       "command"
     ]
 
-    producer = CompassProducer(
+    manager = CompassManager(
       router: { self.router },
       commandRouter: { self.commandRouter },
       currentController: { self.controller }

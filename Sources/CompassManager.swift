@@ -2,7 +2,7 @@ import Foundation
 import Compass
 import Aftermath
 
-public final class CompassProducer: ReactionProducer {
+public final class CompassManager: ReactionProducer {
   public let router: () -> Router
   public var commandRouter: (() -> CommandRouter)?
   public let currentController: () -> Controller
@@ -19,6 +19,8 @@ public final class CompassProducer: ReactionProducer {
   // MARK: - Navigation
 
   func configure() {
+    Engine.sharedInstance.use(CompassCommandHandler())
+
     react(to: CompassCommand.self, with: Reaction(
       done: { [weak self] (location: Location) in
         guard let weakSelf = self else {

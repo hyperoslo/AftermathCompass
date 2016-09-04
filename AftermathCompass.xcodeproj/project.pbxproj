@@ -15,7 +15,7 @@
 		D5361FDF1D6C59FD003C3EE8 /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
 		D582BA221D6D00A5000D5F3A /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D582BA211D6D00A5000D5F3A /* Aftermath.framework */; };
 		D582BA231D6D00DD000D5F3A /* Aftermath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */; };
-		D582BA251D6DAB11000D5F3A /* CompassProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA241D6DAB11000D5F3A /* CompassProducer.swift */; };
+		D582BA251D6DAB11000D5F3A /* CompassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA241D6DAB11000D5F3A /* CompassManager.swift */; };
 		D582BA2A1D6DAB63000D5F3A /* CompassCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA291D6DAB63000D5F3A /* CompassCommand.swift */; };
 		D582BA2B1D6DAB63000D5F3A /* CompassCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA291D6DAB63000D5F3A /* CompassCommand.swift */; };
 		D582BA2C1D6DAB84000D5F3A /* CompassCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA271D6DAB18000D5F3A /* CompassCommandTests.swift */; };
@@ -26,8 +26,8 @@
 		D582BA331D6DAE93000D5F3A /* CompassError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA311D6DAE93000D5F3A /* CompassError.swift */; };
 		D582BA351D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA341D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift */; };
 		D582BA361D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA341D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift */; };
-		D582BA381D6DB7C2000D5F3A /* CompassProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA371D6DB7C2000D5F3A /* CompassProducerTests.swift */; };
-		D582BA391D6DB7C2000D5F3A /* CompassProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA371D6DB7C2000D5F3A /* CompassProducerTests.swift */; };
+		D582BA381D6DB7C2000D5F3A /* CompassManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA371D6DB7C2000D5F3A /* CompassManagerTests.swift */; };
+		D582BA391D6DB7C2000D5F3A /* CompassManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA371D6DB7C2000D5F3A /* CompassManagerTests.swift */; };
 		D582BA3B1D6DBE9D000D5F3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */; };
 		D582BA3C1D6DBE9D000D5F3A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */; };
 		D5982E841D7CD352004C4AAF /* CommandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982E831D7CD352004C4AAF /* CommandRouter.swift */; };
@@ -68,13 +68,13 @@
 		D5361FD51D6C5067003C3EE8 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
 		D5361FDD1D6C59D8003C3EE8 /* Aftermath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aftermath.framework; path = Carthage/Build/iOS/Aftermath.framework; sourceTree = "<group>"; };
 		D582BA211D6D00A5000D5F3A /* Aftermath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Aftermath.framework; path = Carthage/Build/Mac/Aftermath.framework; sourceTree = "<group>"; };
-		D582BA241D6DAB11000D5F3A /* CompassProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassProducer.swift; sourceTree = "<group>"; };
+		D582BA241D6DAB11000D5F3A /* CompassManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassManager.swift; sourceTree = "<group>"; };
 		D582BA271D6DAB18000D5F3A /* CompassCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassCommandTests.swift; sourceTree = "<group>"; };
 		D582BA291D6DAB63000D5F3A /* CompassCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassCommand.swift; sourceTree = "<group>"; };
 		D582BA2E1D6DABAF000D5F3A /* CompassCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassCommandHandler.swift; sourceTree = "<group>"; };
 		D582BA311D6DAE93000D5F3A /* CompassError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassError.swift; sourceTree = "<group>"; };
 		D582BA341D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassCommandHandlerTests.swift; sourceTree = "<group>"; };
-		D582BA371D6DB7C2000D5F3A /* CompassProducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassProducerTests.swift; sourceTree = "<group>"; };
+		D582BA371D6DB7C2000D5F3A /* CompassManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassManagerTests.swift; sourceTree = "<group>"; };
 		D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5982E831D7CD352004C4AAF /* CommandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandRouter.swift; sourceTree = "<group>"; };
 		D5982E861D7CD95B004C4AAF /* CommandRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandRouterTests.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			children = (
 				D582BA291D6DAB63000D5F3A /* CompassCommand.swift */,
 				D582BA2E1D6DABAF000D5F3A /* CompassCommandHandler.swift */,
-				D582BA241D6DAB11000D5F3A /* CompassProducer.swift */,
+				D582BA241D6DAB11000D5F3A /* CompassManager.swift */,
 				D582BA311D6DAE93000D5F3A /* CompassError.swift */,
 				D5982E831D7CD352004C4AAF /* CommandRouter.swift */,
 			);
@@ -175,7 +175,7 @@
 			children = (
 				D582BA271D6DAB18000D5F3A /* CompassCommandTests.swift */,
 				D582BA341D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift */,
-				D582BA371D6DB7C2000D5F3A /* CompassProducerTests.swift */,
+				D582BA371D6DB7C2000D5F3A /* CompassManagerTests.swift */,
 				D5982E861D7CD95B004C4AAF /* CommandRouterTests.swift */,
 				D582BA3A1D6DBE9D000D5F3A /* Helpers.swift */,
 			);
@@ -451,7 +451,7 @@
 			files = (
 				D582BA321D6DAE93000D5F3A /* CompassError.swift in Sources */,
 				D582BA2F1D6DABAF000D5F3A /* CompassCommandHandler.swift in Sources */,
-				D582BA251D6DAB11000D5F3A /* CompassProducer.swift in Sources */,
+				D582BA251D6DAB11000D5F3A /* CompassManager.swift in Sources */,
 				D5982E841D7CD352004C4AAF /* CommandRouter.swift in Sources */,
 				D582BA2A1D6DAB63000D5F3A /* CompassCommand.swift in Sources */,
 			);
@@ -464,7 +464,7 @@
 				D5982E871D7CD95B004C4AAF /* CommandRouterTests.swift in Sources */,
 				D582BA351D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift in Sources */,
 				D582BA2C1D6DAB84000D5F3A /* CompassCommandTests.swift in Sources */,
-				D582BA381D6DB7C2000D5F3A /* CompassProducerTests.swift in Sources */,
+				D582BA381D6DB7C2000D5F3A /* CompassManagerTests.swift in Sources */,
 				D582BA3B1D6DBE9D000D5F3A /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +487,7 @@
 				D5982E881D7CD95B004C4AAF /* CommandRouterTests.swift in Sources */,
 				D582BA361D6DB7BB000D5F3A /* CompassCommandHandlerTests.swift in Sources */,
 				D582BA2D1D6DAB84000D5F3A /* CompassCommandTests.swift in Sources */,
-				D582BA391D6DB7C2000D5F3A /* CompassProducerTests.swift in Sources */,
+				D582BA391D6DB7C2000D5F3A /* CompassManagerTests.swift in Sources */,
 				D582BA3C1D6DBE9D000D5F3A /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
