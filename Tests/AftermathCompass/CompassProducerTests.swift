@@ -3,10 +3,10 @@ import Compass
 import Aftermath
 @testable import AftermathCompass
 
-class NavigationProducerTests: XCTestCase, CommandProducer {
+class CompassProducerTests: XCTestCase, CommandProducer {
 
-  var producer: NavigationProducer!
-  var commandHandler: NavigationCommandHandler!
+  var producer: CompassProducer!
+  var commandHandler: CompassCommandHandler!
   var router: Router!
   var route: TestRoute!
   var errorRoute: ErrorRoute!
@@ -29,8 +29,8 @@ class NavigationProducerTests: XCTestCase, CommandProducer {
     router.routes["login"] = route
     router.errorRoute = errorRoute
 
-    producer = NavigationProducer(router: { self.router }, currentController: { self.controller })
-    commandHandler = NavigationCommandHandler()
+    producer = CompassProducer(router: { self.router }, currentController: { self.controller })
+    commandHandler = CompassCommandHandler()
 
     Engine.sharedInstance.use(commandHandler)
   }
@@ -45,7 +45,7 @@ class NavigationProducerTests: XCTestCase, CommandProducer {
   func testSuccessReaction() {
     let URN = "login"
     let payload = "Test"
-    let command = NavigationCommand(URN: URN, payload: payload)
+    let command = CompassCommand(URN: URN, payload: payload)
 
     execute(command)
 
@@ -57,17 +57,17 @@ class NavigationProducerTests: XCTestCase, CommandProducer {
 
   func testNavigationErrorReaction() {
     let URN = "error"
-    let command = NavigationCommand(URN: URN)
+    let command = CompassCommand(URN: URN)
 
     execute(command)
 
     XCTAssertNil(route.location)
-    XCTAssertTrue(errorRoute.error is NavigationError)
+    XCTAssertTrue(errorRoute.error is CompassError)
   }
 
   func testRouteErrorReaction() {
     let URN = "profile"
-    let command = NavigationCommand(URN: URN)
+    let command = CompassCommand(URN: URN)
 
     execute(command)
 

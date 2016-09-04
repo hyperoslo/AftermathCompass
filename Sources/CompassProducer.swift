@@ -2,7 +2,7 @@ import Foundation
 import Compass
 import Aftermath
 
-public final class NavigationProducer: ReactionProducer {
+public final class CompassProducer: ReactionProducer {
   public let router: () -> Router
   public var commandRouter: (() -> CommandRouter)?
   public let currentController: () -> Controller
@@ -19,7 +19,7 @@ public final class NavigationProducer: ReactionProducer {
   // MARK: - Navigation
 
   func configure() {
-    react(to: NavigationCommand.self, with: Reaction(
+    react(to: CompassCommand.self, with: Reaction(
       done: { [weak self] (location: Location) in
         guard let weakSelf = self else {
           return

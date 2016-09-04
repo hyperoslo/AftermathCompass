@@ -1,6 +1,6 @@
 import Foundation
 
-public enum NavigationError: ErrorType {
+public enum CompassError: ErrorType {
   case InvalidURLString(String)
   case InvalidRoute(NSURL)
 }
