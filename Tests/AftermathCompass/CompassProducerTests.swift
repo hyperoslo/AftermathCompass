@@ -10,26 +10,39 @@ class CompassProducerTests: XCTestCase, CommandProducer {
   var router: Router!
   var route: TestRoute!
   var errorRoute: ErrorRoute!
+  var commandRouter: CommandRouter!
+  var commandRoute: TestCommandRoute!
   var controller: Controller!
 
   override func setUp() {
     super.setUp()
 
-    Compass.scheme = "tests"
-    Compass.routes = [
-      "login",
-      "profile"
-    ]
-
+    // Navigation router
     router = Router()
     route = TestRoute()
     errorRoute = ErrorRoute()
-    controller = Controller()
-
     router.routes["login"] = route
     router.errorRoute = errorRoute
 
-    producer = CompassProducer(router: { self.router }, currentController: { self.controller })
+    // Command router
+    commandRouter = CommandRouter()
+    commandRoute = TestCommandRoute()
+    commandRouter.routes["command"] = commandRoute
+
+    Compass.scheme = "tests"
+    Compass.routes = [
+      "login",
+      "profile",
+      "command"
+    ]
+
+    producer = CompassProducer(
+      router: { self.router },
+      commandRouter: { self.commandRouter },
+      currentController: { self.controller }
+    )
+
+    controller = Controller()
     commandHandler = CompassCommandHandler()
 
     Engine.sharedInstance.use(commandHandler)
@@ -38,11 +51,12 @@ class CompassProducerTests: XCTestCase, CommandProducer {
   override func tearDown() {
     super.tearDown()
     Compass.routes.removeAll()
+    Engine.sharedInstance.invalidate()
   }
 
   // MARK: - Tests
 
-  func testSuccessReaction() {
+  func testNavigationSuccessReaction() {
     let URN = "login"
     let payload = "Test"
     let command = CompassCommand(URN: URN, payload: payload)
@@ -50,6 +64,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     execute(command)
 
     XCTAssertNil(errorRoute.error)
+    XCTAssertNil(commandRoute.location)
     XCTAssertEqual(route.location?.path, URN)
     XCTAssertTrue(route.location?.arguments.isEmpty == true)
     XCTAssertEqual(route.location?.payload as? String, payload)
@@ -62,7 +77,20 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     execute(command)
 
     XCTAssertNil(route.location)
+    XCTAssertNil(commandRoute.location)
     XCTAssertTrue(errorRoute.error is CompassError)
+  }
+
+  func testCommandSuccessReaction() {
+    let URN = "command"
+    let command = CompassCommand(URN: URN)
+
+    execute(command)
+
+    XCTAssertNil(route.location)
+    XCTAssertNil(errorRoute.error)
+    XCTAssertEqual(commandRoute.location?.path, URN)
+    XCTAssertTrue(commandRoute.location?.arguments.isEmpty == true)
   }
 
   func testRouteErrorReaction() {
@@ -72,6 +100,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     execute(command)
 
     XCTAssertNil(route.location)
+    XCTAssertNil(commandRoute.location)
     XCTAssertTrue(errorRoute.error is RouteError)
   }
 }
