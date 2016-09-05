@@ -2,10 +2,10 @@ import XCTest
 import Compass
 @testable import AftermathCompass
 
-class NavigationCommandHandlerTests: XCTestCase {
+class CompassCommandHandlerTests: XCTestCase {
 
-  var command: NavigationCommand!
-  var commandHandler: NavigationCommandHandler!
+  var command: CompassCommand!
+  var commandHandler: CompassCommandHandler!
 
   override func setUp() {
     super.setUp()
@@ -15,7 +15,7 @@ class NavigationCommandHandlerTests: XCTestCase {
       "profile:{user}",
     ]
 
-    commandHandler = NavigationCommandHandler()
+    commandHandler = CompassCommandHandler()
   }
 
   override func tearDown() {
@@ -29,7 +29,7 @@ class NavigationCommandHandlerTests: XCTestCase {
     let URL = NSURL(string: "tests://profile:1")!
     let payload = "Test"
 
-    command = NavigationCommand(URL: URL, payload: payload)
+    command = CompassCommand(URL: URL, payload: payload)
 
     do {
       let event = try commandHandler.handle(command)
@@ -50,13 +50,13 @@ class NavigationCommandHandlerTests: XCTestCase {
 
   func testHandleWithInvalidURL() {
     let URN = "|"
-    command = NavigationCommand(URN: URN)
+    command = CompassCommand(URN: URN)
 
     do {
       let event = try commandHandler.handle(command)
       XCTFail("Command handler returned  invalid event: \(event)")
     } catch {
-      guard let navigationError = error as? NavigationError else {
+      guard let navigationError = error as? CompassError else {
         XCTFail("Command handler returned invalid error: \(error)")
         return
       }
@@ -73,13 +73,13 @@ class NavigationCommandHandlerTests: XCTestCase {
 
   func testHandleWithInvalidRoute() {
     let URN = "login"
-    command = NavigationCommand(URN: URN)
+    command = CompassCommand(URN: URN)
 
     do {
       let event = try commandHandler.handle(command)
       XCTFail("Command handler returned  invalid event: \(event)")
     } catch {
-      guard let navigationError = error as? NavigationError else {
+      guard let navigationError = error as? CompassError else {
         XCTFail("Command handler returned invalid error: \(error)")
         return
       }

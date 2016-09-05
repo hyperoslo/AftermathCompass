@@ -2,8 +2,7 @@ import Foundation
 import Compass
 import Aftermath
 
-public struct NavigationCommand: Command {
-
+public struct CompassCommand: Command {
   public typealias Output = Location
 
   public let URLString: String

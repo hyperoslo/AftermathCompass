@@ -2,19 +2,17 @@ import Foundation
 import Compass
 import Aftermath
 
-public struct NavigationCommandHandler: CommandHandler {
-
-  public init() {}
+struct CompassCommandHandler: CommandHandler {
 
   // MARK: - Command handling
 
-  public func handle(command: NavigationCommand) throws -> Event<NavigationCommand> {
+  func handle(command: CompassCommand) throws -> Event<CompassCommand> {
     guard let URL = NSURL(string: command.URLString) else {
-      throw NavigationError.InvalidURLString(command.URLString)
+      throw CompassError.InvalidURLString(command.URLString)
     }
 
     guard let location = Compass.parse(URL, payload: command.payload) else {
-      throw NavigationError.InvalidRoute(URL)
+      throw CompassError.InvalidRoute(URL)
     }
 
     return Event.Success(location)

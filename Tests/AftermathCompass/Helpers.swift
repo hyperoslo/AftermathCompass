@@ -1,4 +1,6 @@
+import Aftermath
 import Compass
+@testable import AftermathCompass
 
 class TestRoute: Routable {
 
@@ -15,5 +17,19 @@ class ErrorRoute: ErrorRoutable {
 
   func handle(routeError: ErrorType, from currentController: Controller) {
     error = routeError
+  }
+}
+
+struct TestCommand: Command {
+  typealias Output = String
+}
+
+class TestCommandRoute: CommandRoute {
+
+  var location: Location?
+
+  func buildCommand(from location: Location) throws -> AnyCommand {
+    self.location = location
+    return TestCommand()
   }
 }

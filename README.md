@@ -8,25 +8,25 @@
 
 ## Description
 
-**AftermathCompass** is a message-driven navigation system built on top of
+**AftermathCompass** is a message-driven routing system built on top of
 [Aftermath](https://github.com/hyperoslo/Aftermath) and
 [Compass](https://github.com/hyperoslo/Compass).
 
 ## Usage
 
-Create your first route and error handler:
+Create your first route and error handler.
 
 ```swift
 import Compass
 
-struct ProfileRoute: Routable {
+struct UserRoute: Routable {
 
   func navigate(to location: Location, from currentController: Controller) throws {
     guard let id = location.arguments["id"] else {
       throw RouteError.InvalidArguments(location)
     }
 
-    let controller = ProfileController(id: id)
+    let controller = UserController(id: id)
     currentController.navigationController?.pushViewController(controller, animated: true)
   }
 }
@@ -40,6 +40,22 @@ struct ErrorRoute: ErrorRoutable {
 }
 ```
 
+Optionally, you can create a command route to build new commands based on
+`Location`:
+
+```swift
+class UpdateUserRoute: CommandRoute {
+
+  func buildCommand(from location: Location) throws -> AnyCommand {
+    guard let params = location.payload as? User {
+      throw UserError
+    }
+
+    return UpdateUserCommand(parameters: params)
+  }
+}
+```
+
 Configure `Compass` scheme, router and `Aftermath` in your `AppDelegate`:
 
 ```swift
@@ -47,7 +63,8 @@ Configure `Compass` scheme, router and `Aftermath` in your `AppDelegate`:
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let router = Router()
-  var navigationProducer: NavigationProducer!
+  let commandRouter = CommandRouter()
+  var compassManager: CompassManager!
   lazy var navigationController = UINavigationController(rootViewController: ViewController())
 
   lazy var window: UIWindow? = {
@@ -68,25 +85,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       // ...
       configureCompass()
-      configureAftermath()
       return true
   }
 
   func configureCompass() {
-    Compass.scheme = "aftermath"
-    Compass.routes = ["login"]
-
     router.errorRoute = ErrorRoute()
-    router.routes = [
-      "login": LoginRoute()
-    ]
-  }
+    router.routes = ["users:{id}": UserRoute()]
+    commandRouter.routes = ["users:update:{id}": UpdateUserRoute()]
 
-  func configureAftermath() {
-    Engine.sharedInstance.use(NavigationCommandHandler())
+    Compass.scheme = "aftermath"
+    Compass.routes = Array(router.routes.keys) + Array(commandRouter.routes.keys)
 
-    navigationProducer = NavigationProducer(
+    compassManager = CompassManager(
       router: { self.router },
+      commandRouter: { self.commandRouter },
       currentController: currentController
     )
   }
@@ -105,8 +117,14 @@ class ViewController: UIViewController, CommandProducer  {
 
   // ...
 
-  func logout() {
-    execute(NavigationCommand(URN: "login"))
+  // Navigate to URN
+  func openUser(id: Int) {
+    execute(CompassCommand(URN: "users:\(id)"))
+  }
+
+  // Execute command from URN
+  func updateUser(user: User) {
+    execute(CompassCommand(URN: "users:\(user.id)", payload: user))
   }
 
   // ...

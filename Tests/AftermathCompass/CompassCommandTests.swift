@@ -2,9 +2,9 @@ import XCTest
 import Compass
 @testable import AftermathCompass
 
-class NavigationCommandTests: XCTestCase {
+class CompassCommandTests: XCTestCase {
 
-  var command: NavigationCommand!
+  var command: CompassCommand!
 
   override func setUp() {
     super.setUp()
@@ -22,7 +22,7 @@ class NavigationCommandTests: XCTestCase {
     let URN = "login"
     let payload = "Test"
 
-    command = NavigationCommand(URN: URN, payload: payload)
+    command = CompassCommand(URN: URN, payload: payload)
 
     XCTAssertEqual(command.URLString, "\(Compass.scheme)\(URN)")
     XCTAssertEqual(command.payload as? String, payload)
@@ -32,7 +32,7 @@ class NavigationCommandTests: XCTestCase {
     let URL = NSURL(string: "tests://callback?access_token=ya29")!
     let payload = "Test"
 
-    command = NavigationCommand(URL: URL, payload: payload)
+    command = CompassCommand(URL: URL, payload: payload)
 
     XCTAssertEqual(command.URLString, URL.absoluteString)
     XCTAssertEqual(command.payload as? String, payload)
