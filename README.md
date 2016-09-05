@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   let router = Router()
   let commandRouter = CommandRouter()
-  var compassProducer: CompassProducer!
+  var compassManager: CompassManager!
   lazy var navigationController = UINavigationController(rootViewController: ViewController())
 
   lazy var window: UIWindow? = {
@@ -96,8 +96,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Compass.scheme = "aftermath"
     Compass.routes = Array(router.routes.keys) + Array(commandRouter.routes.keys)
 
-    compassProducer = CompassProducer(
+    compassManager = CompassManager(
       router: { self.router },
+      commandRouter: { self.commandRouter },
       currentController: currentController
     )
   }
