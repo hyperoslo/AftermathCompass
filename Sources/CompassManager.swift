@@ -22,7 +22,7 @@ public final class CompassManager: ReactionProducer {
     Engine.sharedInstance.use(CompassCommandHandler())
 
     react(to: CompassCommand.self, with: Reaction(
-      done: { [weak self] (location: Location) in
+      consume: { [weak self] (location: Location) in
         guard let weakSelf = self else {
           return
         }
@@ -33,7 +33,7 @@ public final class CompassManager: ReactionProducer {
 
         weakSelf.router().navigate(to: location, from: weakSelf.currentController())
       },
-      fail: { [weak self] error in
+      rescue: { [weak self] error in
         guard let weakSelf = self else {
           return
         }

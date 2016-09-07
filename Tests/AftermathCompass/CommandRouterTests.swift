@@ -28,7 +28,7 @@ class CommandRouterTests: XCTestCase {
 
   // MARK: - Tests
 
-  func testExecuteSuccess() {
+  func testExecuteData() {
     let URN = "command"
     let location = Location(path: URN)
     let result = commandRouter.execute(location)

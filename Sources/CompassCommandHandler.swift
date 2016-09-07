@@ -15,6 +15,6 @@ struct CompassCommandHandler: CommandHandler {
       throw CompassError.InvalidRoute(URL)
     }
 
-    return Event.Success(location)
+    return Event.Data(location)
   }
 }

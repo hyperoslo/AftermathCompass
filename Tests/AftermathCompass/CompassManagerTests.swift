@@ -56,7 +56,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
 
   // MARK: - Tests
 
-  func testNavigationSuccessReaction() {
+  func testNavigationDataReaction() {
     let URN = "login"
     let payload = "Test"
     let command = CompassCommand(URN: URN, payload: payload)
@@ -81,7 +81,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     XCTAssertTrue(errorRoute.error is CompassError)
   }
 
-  func testCommandSuccessReaction() {
+  func testCommandDataReaction() {
     let URN = "command"
     let command = CompassCommand(URN: URN)
 
