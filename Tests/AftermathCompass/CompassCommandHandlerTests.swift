@@ -35,7 +35,7 @@ class CompassCommandHandlerTests: XCTestCase {
       let event = try commandHandler.handle(command)
 
       switch event {
-      case .Success(let location):
+      case .Data(let location):
         XCTAssertEqual(location.path, "profile:{user}")
         XCTAssertEqual(location.arguments["user"], "1")
         XCTAssertEqual(location.payload as? String, payload)
