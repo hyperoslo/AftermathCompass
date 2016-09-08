@@ -400,7 +400,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/MacAftermath.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Aftermath.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Compass.framework",
 			);
 			name = "Copy frameworks with Carthage";
