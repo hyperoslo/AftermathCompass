@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5157DE71D821843005620BF /* CompassManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BA241D6DAB11000D5F3A /* CompassManager.swift */; };
 		D5361FCE1D6C4F8E003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */; };
 		D5361FD61D6C5067003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FD41D6C5067003C3EE8 /* Compass.framework */; };
 		D5361FD81D6C5080003C3EE8 /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5361FCC1D6C4F8E003C3EE8 /* Compass.framework */; };
@@ -475,6 +476,7 @@
 			files = (
 				D582BA301D6DABAF000D5F3A /* CompassCommandHandler.swift in Sources */,
 				D582BA331D6DAE93000D5F3A /* CompassError.swift in Sources */,
+				D5157DE71D821843005620BF /* CompassManager.swift in Sources */,
 				D5982E851D7CD352004C4AAF /* CommandRouter.swift in Sources */,
 				D582BA2B1D6DAB63000D5F3A /* CompassCommand.swift in Sources */,
 			);
@@ -692,7 +694,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.AftermathCompass-Mac";
 				PRODUCT_NAME = AftermathCompass;
 				SDKROOT = macosx;
@@ -720,7 +722,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.AftermathCompass-Mac";
 				PRODUCT_NAME = AftermathCompass;
 				SDKROOT = macosx;
