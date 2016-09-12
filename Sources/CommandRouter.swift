@@ -18,7 +18,7 @@ public struct CommandRouter: CommandProducer {
       return false
     }
 
-    execute(RouteCommandBuilder(route: route, location: location))
+    execute(builder: RouteCommandBuilder(route: route, location: location))
     return true
   }
 }
