@@ -5,11 +5,11 @@ import Aftermath
 public final class CompassManager: ReactionProducer {
   public let router: () -> Router
   public var commandRouter: (() -> CommandRouter)?
-  public let currentController: () -> Controller
+  public let currentController: () -> CurrentController
 
   // MARK: - Initialization
 
-  public init(router: @escaping () -> Router, commandRouter: (() -> CommandRouter)? = nil, currentController: @escaping () -> Controller) {
+  public init(router: @escaping () -> Router, commandRouter: (() -> CommandRouter)? = nil, currentController: @escaping () -> CurrentController) {
     self.router = router
     self.commandRouter = commandRouter
     self.currentController = currentController
