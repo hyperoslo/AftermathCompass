@@ -45,7 +45,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     controller = Controller()
     commandHandler = CompassCommandHandler()
 
-    Engine.sharedInstance.use(commandHandler)
+    Engine.sharedInstance.use(handler: commandHandler)
   }
 
   override func tearDown() {
@@ -61,7 +61,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     let payload = "Test"
     let command = CompassCommand(URN: URN, payload: payload)
 
-    execute(command)
+    execute(command: command)
 
     XCTAssertNil(errorRoute.error)
     XCTAssertNil(commandRoute.location)
@@ -74,7 +74,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     let URN = "error"
     let command = CompassCommand(URN: URN)
 
-    execute(command)
+    execute(command: command)
 
     XCTAssertNil(route.location)
     XCTAssertNil(commandRoute.location)
@@ -85,7 +85,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     let URN = "command"
     let command = CompassCommand(URN: URN)
 
-    execute(command)
+    execute(command: command)
 
     XCTAssertNil(route.location)
     XCTAssertNil(errorRoute.error)
@@ -97,7 +97,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     let URN = "profile"
     let command = CompassCommand(URN: URN)
 
-    execute(command)
+    execute(command: command)
 
     XCTAssertNil(route.location)
     XCTAssertNil(commandRoute.location)

@@ -29,12 +29,12 @@ class CompassCommandTests: XCTestCase {
   }
 
   func testInitWithURL() {
-    let URL = NSURL(string: "tests://callback?access_token=ya29")!
+    let url = URL(string: "tests://callback?access_token=ya29")!
     let payload = "Test"
 
-    command = CompassCommand(URL: URL, payload: payload)
+    command = CompassCommand(URL: url, payload: payload)
 
-    XCTAssertEqual(command.URLString, URL.absoluteString)
+    XCTAssertEqual(command.URLString, url.absoluteString)
     XCTAssertEqual(command.payload as? String, payload)
   }
 }

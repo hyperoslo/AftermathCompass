@@ -13,9 +13,9 @@ class TestRoute: Routable {
 
 class ErrorRoute: ErrorRoutable {
 
-  var error: ErrorType?
+  var error: Error?
 
-  func handle(routeError: ErrorType, from currentController: Controller) {
+  func handle(routeError: Error, from currentController: Controller) {
     error = routeError
   }
 }

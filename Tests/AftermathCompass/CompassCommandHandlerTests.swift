@@ -26,16 +26,16 @@ class CompassCommandHandlerTests: XCTestCase {
   // MARK: - Tests
 
   func testHandleWithValidURL() {
-    let URL = NSURL(string: "tests://profile:1")!
+    let url = URL(string: "tests://profile:1")!
     let payload = "Test"
 
-    command = CompassCommand(URL: URL, payload: payload)
+    command = CompassCommand(URL: url, payload: payload)
 
     do {
-      let event = try commandHandler.handle(command)
+      let event = try commandHandler.handle(command: command)
 
       switch event {
-      case .Data(let location):
+      case .data(let location):
         XCTAssertEqual(location.path, "profile:{user}")
         XCTAssertEqual(location.arguments["user"], "1")
         XCTAssertEqual(location.payload as? String, payload)
@@ -53,7 +53,7 @@ class CompassCommandHandlerTests: XCTestCase {
     command = CompassCommand(URN: URN)
 
     do {
-      let event = try commandHandler.handle(command)
+      let event = try commandHandler.handle(command: command)
       XCTFail("Command handler returned  invalid event: \(event)")
     } catch {
       guard let navigationError = error as? CompassError else {
@@ -62,7 +62,7 @@ class CompassCommandHandlerTests: XCTestCase {
       }
 
       switch navigationError {
-      case .InvalidURLString(let URLString):
+      case .invalidURLString(let URLString):
         XCTAssertEqual(URLString, command.URLString)
       default:
         XCTFail("Command handler returned invalid error: \(error)")
@@ -76,7 +76,7 @@ class CompassCommandHandlerTests: XCTestCase {
     command = CompassCommand(URN: URN)
 
     do {
-      let event = try commandHandler.handle(command)
+      let event = try commandHandler.handle(command: command)
       XCTFail("Command handler returned  invalid event: \(event)")
     } catch {
       guard let navigationError = error as? CompassError else {
@@ -85,7 +85,7 @@ class CompassCommandHandlerTests: XCTestCase {
       }
 
       switch navigationError {
-      case .InvalidRoute(let URL):
+      case .invalidRoute(let URL):
         XCTAssertEqual(URL.absoluteString, command.URLString)
       default:
         XCTFail("Command handler returned invalid error: \(error)")
