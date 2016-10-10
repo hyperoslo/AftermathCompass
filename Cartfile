@@ -1,2 +1,2 @@
-github "hyperoslo/Compass"
-github "hyperoslo/Aftermath" "master"
+github "hyperoslo/Compass" "swift-3"
+github "hyperoslo/Aftermath" "swift-3"
