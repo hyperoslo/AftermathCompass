@@ -13,7 +13,7 @@ public struct CommandRouter: CommandProducer {
   public var routes = [String : CommandRoute]()
   public init() {}
 
-  public func execute(location: Location) -> Bool {
+  public func execute(_ location: Location) -> Bool {
     guard let route = routes[location.path] else {
       return false
     }

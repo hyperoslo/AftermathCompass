@@ -7,14 +7,14 @@ struct CompassCommandHandler: CommandHandler {
   // MARK: - Command handling
 
   func handle(command: CompassCommand) throws -> Event<CompassCommand> {
-    guard let URL = NSURL(string: command.URLString) else {
-      throw CompassError.InvalidURLString(command.URLString)
+    guard let URL = URL(string: command.URLString) else {
+      throw CompassError.invalidURLString(command.URLString)
     }
 
-    guard let location = Compass.parse(URL, payload: command.payload) else {
-      throw CompassError.InvalidRoute(URL)
+    guard let location = Compass.parse(url: URL, payload: command.payload) else {
+      throw CompassError.invalidRoute(URL)
     }
 
-    return Event.Data(location)
+    return Event.data(location)
   }
 }

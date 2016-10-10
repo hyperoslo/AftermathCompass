@@ -9,7 +9,7 @@ public final class CompassManager: ReactionProducer {
 
   // MARK: - Initialization
 
-  public init(router: () -> Router, commandRouter: (() -> CommandRouter)? = nil, currentController: () -> Controller) {
+  public init(router: @escaping () -> Router, commandRouter: (() -> CommandRouter)? = nil, currentController: @escaping () -> Controller) {
     self.router = router
     self.commandRouter = commandRouter
     self.currentController = currentController
@@ -19,7 +19,7 @@ public final class CompassManager: ReactionProducer {
   // MARK: - Navigation
 
   func configure() {
-    Engine.sharedInstance.use(CompassCommandHandler())
+    Engine.sharedInstance.use(handler: CompassCommandHandler())
 
     react(to: CompassCommand.self, with: Reaction(
       consume: { [weak self] (location: Location) in
@@ -38,7 +38,7 @@ public final class CompassManager: ReactionProducer {
           return
         }
 
-        weakSelf.router().errorRoute?.handle(error, from: weakSelf.currentController())
+        weakSelf.router().errorRoute?.handle(routeError: error, from: weakSelf.currentController())
       })
     )
   }

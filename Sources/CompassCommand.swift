@@ -15,7 +15,7 @@ public struct CompassCommand: Command {
     self.payload = payload
   }
 
-  public init(URL: NSURL, payload: Any? = nil) {
+  public init(URL: Foundation.URL, payload: Any? = nil) {
     self.URLString = URL.absoluteString
     self.payload = payload
   }
