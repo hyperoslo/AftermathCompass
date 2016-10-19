@@ -19,7 +19,7 @@ public final class CompassManager: ReactionProducer {
   // MARK: - Navigation
 
   func configure() {
-    Engine.sharedInstance.use(handler: CompassCommandHandler())
+    Engine.shared.use(handler: CompassCommandHandler())
 
     react(to: CompassCommand.self, with: Reaction(
       consume: { [weak self] (location: Location) in
