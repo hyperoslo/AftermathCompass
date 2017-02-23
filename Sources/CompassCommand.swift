@@ -11,7 +11,7 @@ public struct CompassCommand: Command {
   // MARK: - Initialization
 
   public init(URN: String, payload: Any? = nil) {
-    self.URLString = "\(Compass.scheme)\(URN)"
+    self.URLString = "\(Navigator.scheme)\(URN)"
     self.payload = payload
   }
 

@@ -15,15 +15,15 @@ class CommandRouterTests: XCTestCase {
     commandRoute = TestCommandRoute()
     commandRouter.routes["command"] = commandRoute
 
-    Compass.scheme = "tests"
-    Compass.routes = [
+    Navigator.scheme = "tests"
+    Navigator.routes = [
       "command"
     ]
   }
 
   override func tearDown() {
     super.tearDown()
-    Compass.routes.removeAll()
+    Navigator.routes.removeAll()
   }
 
   // MARK: - Tests

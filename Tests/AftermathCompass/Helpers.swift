@@ -6,7 +6,7 @@ class TestRoute: Routable {
 
   var location: Location?
 
-  func navigate(to location: Location, from currentController: Controller) throws {
+  func navigate(to location: Location, from currentController: CurrentController) throws {
     self.location = location
   }
 }
@@ -15,7 +15,7 @@ class ErrorRoute: ErrorRoutable {
 
   var error: Error?
 
-  func handle(routeError: Error, from currentController: Controller) {
+  func handle(routeError: Error, from currentController: CurrentController) {
     error = routeError
   }
 }

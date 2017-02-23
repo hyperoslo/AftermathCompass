@@ -10,8 +10,8 @@ class CompassCommandHandlerTests: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    Compass.scheme = "tests"
-    Compass.routes = [
+    Navigator.scheme = "tests"
+    Navigator.routes = [
       "profile:{user}",
     ]
 
@@ -20,7 +20,7 @@ class CompassCommandHandlerTests: XCTestCase {
 
   override func tearDown() {
     super.tearDown()
-    Compass.routes.removeAll()
+    Navigator.routes.removeAll()
   }
 
   // MARK: - Tests
