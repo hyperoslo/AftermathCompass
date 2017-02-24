@@ -11,7 +11,7 @@ struct CompassCommandHandler: CommandHandler {
       throw CompassError.invalidURLString(command.URLString)
     }
 
-    guard let location = Compass.parse(url: URL, payload: command.payload) else {
+    guard let location = Navigator.parse(url: URL, payload: command.payload) else {
       throw CompassError.invalidRoute(URL)
     }
 

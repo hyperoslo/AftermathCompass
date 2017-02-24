@@ -8,12 +8,12 @@ class CompassCommandTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
-    Compass.scheme = "tests"
+    Navigator.scheme = "tests"
   }
 
   override func tearDown() {
     super.tearDown()
-    Compass.routes.removeAll()
+    Navigator.routes.removeAll()
   }
 
   // MARK: - Tests
@@ -24,7 +24,7 @@ class CompassCommandTests: XCTestCase {
 
     command = CompassCommand(URN: URN, payload: payload)
 
-    XCTAssertEqual(command.URLString, "\(Compass.scheme)\(URN)")
+    XCTAssertEqual(command.URLString, "\(Navigator.scheme)\(URN)")
     XCTAssertEqual(command.payload as? String, payload)
   }
 

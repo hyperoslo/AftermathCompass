@@ -12,7 +12,7 @@ class CompassProducerTests: XCTestCase, CommandProducer {
   var errorRoute: ErrorRoute!
   var commandRouter: CommandRouter!
   var commandRoute: TestCommandRoute!
-  var controller: Controller!
+  var controller: CurrentController!
 
   override func setUp() {
     super.setUp()
@@ -29,8 +29,8 @@ class CompassProducerTests: XCTestCase, CommandProducer {
     commandRoute = TestCommandRoute()
     commandRouter.routes["command"] = commandRoute
 
-    Compass.scheme = "tests"
-    Compass.routes = [
+    Navigator.scheme = "tests"
+    Navigator.routes = [
       "login",
       "profile",
       "command"
@@ -42,16 +42,16 @@ class CompassProducerTests: XCTestCase, CommandProducer {
       currentController: { self.controller }
     )
 
-    controller = Controller()
+    controller = CurrentController()
     commandHandler = CompassCommandHandler()
 
-    Engine.sharedInstance.use(handler: commandHandler)
+    Engine.shared.use(handler: commandHandler)
   }
 
   override func tearDown() {
     super.tearDown()
-    Compass.routes.removeAll()
-    Engine.sharedInstance.invalidate()
+    Navigator.routes.removeAll()
+    Engine.shared.invalidate()
   }
 
   // MARK: - Tests
